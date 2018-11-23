@@ -1,0 +1,8 @@
+<% @dose = Dose.new %>
+
+<%= form_for [@cocktail, @dose] do |f| %>
+  <%= f.label :description, "Enter a description:" %>
+  <%= f.text_field :description %>
+
+  <%= f.submit class: "btn btn primary" %>
+<% end %>

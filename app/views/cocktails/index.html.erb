@@ -1,0 +1,29 @@
+<<div class="container-index">
+  <div class="left-side">
+    <div class="sticky">
+      <div class="button-div">
+        <%= link_to "Add a new cocktail", cocktails_new_path, class: "btn-cocktails" %>
+      </div>
+    </div>
+  </div>
+  <div class="left-side">
+    <div class="container-fluid">
+      <div class="row">
+        <% @cocktails.each do |cocktail| %>
+          <div class="card-cocktails col-xs-8 col-md-5">
+            <h2><%= link_to cocktail.name, cocktail_path(cocktail) %></h2>
+          </div>
+        <% end %>
+      </div>
+    </div>
+  </div>
+</div>
+
+<h1>My Cocktails</h1>
+<% @cocktails.each do |cocktail| %>
+
+  <h2><%= link_to cocktail.name, cocktail_path(cocktail) %></h2>
+
+<% end %>
+
+<h3><%= link_to "Make a new cocktail!", cocktails_new_path %></h3>
